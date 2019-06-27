@@ -2,7 +2,9 @@ package com.example.petclinic.controller;
 
 import com.example.petclinic.model.Owner;
 import com.example.petclinic.service.OwnerService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -28,7 +30,15 @@ public class OwnerController implements BasicController<Owner> {
     @GetMapping(value = "getById/{id}", produces = "application/json")
     public Owner get(@PathVariable("id") Long id) {
 
-        return this.ownerService.get(id);
+        // Demonstrates exception handling with ResponseStatusException exception
+        Owner owner = null;
+        try {
+            owner = this.ownerService.get(id);
+        } catch (Exception exc) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Owner [" + id + "] Not Found", exc);
+        }
+        return owner;
     }
 
     @Override

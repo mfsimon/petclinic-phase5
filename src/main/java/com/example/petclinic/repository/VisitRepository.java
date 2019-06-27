@@ -1,6 +1,5 @@
 package com.example.petclinic.repository;
 
-import com.example.petclinic.model.Pet;
 import com.example.petclinic.model.Visit;
 import org.springframework.data.repository.CrudRepository;
 

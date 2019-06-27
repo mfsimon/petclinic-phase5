@@ -12,9 +12,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.Date;
 
-/*
-Entry Point
- */
 @SpringBootApplication
 public class PetClinicDriver implements ExitCodeGenerator {
 

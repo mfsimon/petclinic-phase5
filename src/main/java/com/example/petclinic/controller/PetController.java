@@ -3,7 +3,6 @@ package com.example.petclinic.controller;
 import com.example.petclinic.model.Owner;
 import com.example.petclinic.model.Pet;
 import com.example.petclinic.service.PetService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

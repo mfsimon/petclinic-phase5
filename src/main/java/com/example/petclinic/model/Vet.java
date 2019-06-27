@@ -17,14 +17,14 @@ public class Vet {
 
     private String name;
 
-    @ElementCollection(targetClass=Speciality.class)
+    @ElementCollection(targetClass = Speciality.class)
     @Enumerated(EnumType.ORDINAL)
-    @CollectionTable(name="specialities")
-    @Column(name="speciality")
+    @CollectionTable(name = "specialities")
+    @Column(name = "speciality")
     private List<Speciality> specialities = new ArrayList<>();
 
     @ManyToMany(mappedBy = "vets")
-    @JsonIgnoreProperties({"vets","hibernateLazyInitializer", "handler"})
+    @JsonIgnoreProperties({"vets", "hibernateLazyInitializer", "handler"})
     private List<Visit> visits = new ArrayList<>();
 
     protected Vet() {
