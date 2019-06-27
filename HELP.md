@@ -50,3 +50,11 @@ The following guides illustrate how to use some features and patterns applied in
 * [REST Tutorials (Baeldung)](https://www.baeldung.com/rest-with-spring-series)
 * [Building a REST Client](https://spring.io/guides/gs/consuming-rest/)
 * [Building a REST Server](https://spring.io/guides/gs/rest-service/)
+
+###### Phase 5 Links
+* [What are Microservices?](https://microservices.io/)
+* [Decompose by Buisiness Capability](https://microservices.io/patterns/decomposition/decompose-by-business-capability.html)
+* [Microservices Introduction](https://www.geeksforgeeks.org/microservices-introduction/)
+* [Microservices with Spring](https://spring.io/blog/2015/07/14/microservices-with-spring)
+* [Microservices Implementation in Java](https://www.tatvasoft.com/blog/microservices-implementation-java/)
+* [Library Best Practices](https://www.oracle.com/corporate/features/library-in-java-best-practices.html)
