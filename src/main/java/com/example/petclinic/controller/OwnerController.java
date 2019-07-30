@@ -49,7 +49,7 @@ public class OwnerController implements BasicController<Owner> {
     }
 
     @Override
-    @RequestMapping(value = "deleteOwner", method = {RequestMethod.DELETE}, produces = "application/json")
+    @DeleteMapping(value = "deleteOwner", produces = "application/json")
     public boolean delete(@RequestBody Owner owner) {
 
         return this.ownerService.delete(owner);
