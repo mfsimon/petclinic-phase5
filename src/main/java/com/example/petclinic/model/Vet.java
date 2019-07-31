@@ -24,7 +24,7 @@ public class Vet {
     private List<Speciality> specialities = new ArrayList<>();
 
     @ManyToMany(mappedBy = "vets")
-    @JsonIgnoreProperties({"vets", "hibernateLazyInitializer", "handler"})
+    @JsonIgnoreProperties({"pet","vets"})
     private List<Visit> visits = new ArrayList<>();
 
     protected Vet() {
