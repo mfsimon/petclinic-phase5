@@ -7,6 +7,8 @@ In this phase of the project, we convert the code from phase 4 to a microservice
 
 #### What You Are Given
 * REST code from phase 4.
+* Phase 5 template, which can be found [here](https://github.com/AcademyNATrainers/petclinic-phase5-microservices.git).
+* `https://github.com/AcademyNATrainers/petclinic-phase5-microservices.git`
 
 #### What You Need To Complete
 * Break each of the controller sequences into separate REST services.
