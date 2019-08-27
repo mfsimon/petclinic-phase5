@@ -21,7 +21,7 @@ public class Visit {
     // Lazy fetch is better for performance than eager
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_id")
-    @JsonIgnoreProperties({"owner", "visits"})
+    @JsonIgnoreProperties({"visits"})
     private Pet pet;
 
     // Using the Visit as the owner of the relationship

@@ -31,7 +31,7 @@ public class Pet {
             orphanRemoval = true,
             fetch = FetchType.LAZY
     )
-    @JsonIgnoreProperties({"pet", "vets"})
+    @JsonIgnoreProperties({"pet"})
     private List<Visit> visits = new ArrayList<>();
 
     protected Pet() {
