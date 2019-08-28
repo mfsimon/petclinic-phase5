@@ -43,15 +43,21 @@ public class VetService implements BasicService<Vet> {
     }
 
     @Override
-    public boolean delete(Vet vet) {
+    public void delete(Long id) {
 
-        this.vetRepository.delete(vet);
-        return true;
+        Vet vetToDelete = get(id);
+        this.vetRepository.delete(vetToDelete);
+
     }
 
     @Override
     public List<Vet> getAll() {
 
         return (List<Vet>) this.vetRepository.findAll();
+    }
+
+    public List<Vet> getVetByName(String name) {
+
+        return this.vetRepository.findVetByName(name);
     }
 }

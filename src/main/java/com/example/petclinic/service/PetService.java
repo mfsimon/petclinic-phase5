@@ -43,10 +43,11 @@ public class PetService implements BasicService<Pet> {
     }
 
     @Override
-    public boolean delete(Pet pet) {
+    public void delete(Long id) {
 
-        petRepository.delete(pet);
-        return true;
+        Pet petToDelete = get(id);
+        this.petRepository.delete(petToDelete);
+
     }
 
     @Override

@@ -36,6 +36,10 @@ public class Vet {
         this.specialities = specialities;
     }
 
+    public static VetBuilder builder() {
+        return new VetBuilder();
+    }
+
     public Long getId() {
         return id;
     }
@@ -95,10 +99,6 @@ public class Vet {
         //sb.append(", specialities=").append(specialities);
         sb.append('}');
         return sb.toString();
-    }
-
-    public static VetBuilder builder() {
-        return new VetBuilder();
     }
 
     public static final class VetBuilder {

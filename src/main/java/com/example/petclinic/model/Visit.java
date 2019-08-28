@@ -46,6 +46,10 @@ public class Visit {
         this.description = description;
     }
 
+    public static VisitBuilder builder() {
+        return new VisitBuilder();
+    }
+
     public Long getId() {
         return id;
     }
@@ -113,10 +117,6 @@ public class Visit {
         sb.append(", description='").append(description).append('\'');
         sb.append('}');
         return sb.toString();
-    }
-
-    public static VisitBuilder builder() {
-        return new VisitBuilder();
     }
 
     public static final class VisitBuilder {

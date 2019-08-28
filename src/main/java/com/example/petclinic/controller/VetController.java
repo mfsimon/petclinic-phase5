@@ -3,6 +3,8 @@ package com.example.petclinic.controller;
 
 import com.example.petclinic.model.Vet;
 import com.example.petclinic.service.VetService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,10 +42,12 @@ public class VetController implements BasicController<Vet> {
     }
 
     @Override
-    @DeleteMapping(value = "deleteVet", produces = "application/json")
-    public boolean delete(@RequestBody Vet vet) {
+    @RequestMapping(value = "deleteVet/{id}", method = {RequestMethod.DELETE}, produces = "application/json")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
 
-        return this.vetService.delete(vet);
+        this.vetService.delete(id);
+
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @Override
@@ -51,5 +55,11 @@ public class VetController implements BasicController<Vet> {
     public List<Vet> getAll() {
 
         return this.vetService.getAll();
+    }
+
+    @GetMapping(value = "getVetByName/{name}", produces = "application/json")
+    public List<Vet> getVetByName(@PathVariable String name) {
+
+        return this.vetService.getVetByName(name);
     }
 }

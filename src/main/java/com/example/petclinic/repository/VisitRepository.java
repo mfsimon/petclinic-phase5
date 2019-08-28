@@ -8,4 +8,5 @@ import java.util.List;
 public interface VisitRepository extends CrudRepository<Visit, Long> {
 
     List<Visit> findVisitByPetName(String name);
+
 }

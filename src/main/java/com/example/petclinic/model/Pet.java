@@ -45,6 +45,10 @@ public class Pet {
         this.petType = petType;
     }
 
+    public static PetBuilder builder() {
+        return new PetBuilder();
+    }
+
     public Long getId() {
         return id;
     }
@@ -120,10 +124,6 @@ public class Pet {
         sb.append(", petType=").append(petType);
         sb.append('}');
         return sb.toString();
-    }
-
-    public static PetBuilder builder() {
-        return new PetBuilder();
     }
 
     public static final class PetBuilder {
