@@ -29,7 +29,7 @@ public class Owner {
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"owner","visits"})
+    @JsonIgnoreProperties({"owner"})
     private List<Pet> pets = new ArrayList<>();
 
     protected Owner() {
@@ -45,6 +45,10 @@ public class Owner {
 
     }
 
+    // Builder pattern using static builder
+    public static OwnerBuilder builder() {
+        return new OwnerBuilder();
+    }
 
     public Long getId() {
         return id;
@@ -127,11 +131,6 @@ public class Owner {
         sb.append('}');
 
         return sb.toString();
-    }
-
-    // Builder pattern using static builder
-    public static OwnerBuilder builder() {
-        return new OwnerBuilder();
     }
 
     public static final class OwnerBuilder {

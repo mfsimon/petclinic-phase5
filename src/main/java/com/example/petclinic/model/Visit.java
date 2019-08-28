@@ -21,7 +21,7 @@ public class Visit {
     // Lazy fetch is better for performance than eager
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_id")
-    @JsonIgnoreProperties({"owner", "visits"})
+    @JsonIgnoreProperties({"visits"})
     private Pet pet;
 
     // Using the Visit as the owner of the relationship
@@ -44,6 +44,10 @@ public class Visit {
     public Visit(Date dateOfVisit, String description) {
         this.dateOfVisit = dateOfVisit;
         this.description = description;
+    }
+
+    public static VisitBuilder builder() {
+        return new VisitBuilder();
     }
 
     public Long getId() {
@@ -113,10 +117,6 @@ public class Visit {
         sb.append(", description='").append(description).append('\'');
         sb.append('}');
         return sb.toString();
-    }
-
-    public static VisitBuilder builder() {
-        return new VisitBuilder();
     }
 
     public static final class VisitBuilder {

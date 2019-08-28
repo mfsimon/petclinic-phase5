@@ -24,7 +24,7 @@ public class Vet {
     private List<Speciality> specialities = new ArrayList<>();
 
     @ManyToMany(mappedBy = "vets")
-    @JsonIgnoreProperties({"pet","vets"})
+    @JsonIgnoreProperties({"vets"})
     private List<Visit> visits = new ArrayList<>();
 
     protected Vet() {
@@ -34,6 +34,10 @@ public class Vet {
     public Vet(String name, List<Speciality> specialities) {
         this.name = name;
         this.specialities = specialities;
+    }
+
+    public static VetBuilder builder() {
+        return new VetBuilder();
     }
 
     public Long getId() {
@@ -95,10 +99,6 @@ public class Vet {
         //sb.append(", specialities=").append(specialities);
         sb.append('}');
         return sb.toString();
-    }
-
-    public static VetBuilder builder() {
-        return new VetBuilder();
     }
 
     public static final class VetBuilder {

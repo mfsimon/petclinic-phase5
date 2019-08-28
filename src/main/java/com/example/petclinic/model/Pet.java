@@ -31,7 +31,7 @@ public class Pet {
             orphanRemoval = true,
             fetch = FetchType.LAZY
     )
-    @JsonIgnoreProperties({"pet", "vets"})
+    @JsonIgnoreProperties({"pet"})
     private List<Visit> visits = new ArrayList<>();
 
     protected Pet() {
@@ -43,6 +43,10 @@ public class Pet {
         this.name = name;
         this.birthDate = birthDate;
         this.petType = petType;
+    }
+
+    public static PetBuilder builder() {
+        return new PetBuilder();
     }
 
     public Long getId() {
@@ -120,10 +124,6 @@ public class Pet {
         sb.append(", petType=").append(petType);
         sb.append('}');
         return sb.toString();
-    }
-
-    public static PetBuilder builder() {
-        return new PetBuilder();
     }
 
     public static final class PetBuilder {
