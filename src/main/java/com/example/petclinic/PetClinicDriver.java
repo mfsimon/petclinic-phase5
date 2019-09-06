@@ -26,9 +26,7 @@ public class PetClinicDriver implements ExitCodeGenerator {
 
         // We'll need a reference to the Spring IoC container (it's context).
         context = SpringApplication.run(PetClinicDriver.class, args);
-
         generateData();
-
     }
 
     private static void generateData() {
